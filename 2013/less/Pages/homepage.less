@@ -1,0 +1,97 @@
+@import "../mixins";
+@import "../variables";
+
+#headlines,
+#breaking,
+#community
+{
+	display: none;
+	float: left;
+	width: 100%;
+}
+
+#videos
+{
+	display: none;
+}
+
+#headlines
+{
+	display: block;
+}
+
+#headlines,
+#breaking
+{
+	.heading
+	{
+		display: none;
+
+		@media @medium
+		{
+			display: block;
+		}
+	}
+}
+
+@media @medium
+{
+	.content
+	{		
+		padding-right: 318px;
+		overflow: hidden;
+	}
+
+	#headlines,
+	#breaking,
+	#community
+	{
+		display: block !important;
+		float: left;
+	}
+	
+	#videos
+	{
+		display: block;
+	}
+	
+	#breaking
+	{
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+	
+		width: 318px;
+		float: right;
+	}
+	
+	#filter
+	{
+		display: none;
+	}
+}
+
+@media @large
+{
+	#headlines
+	{
+		> #top-three
+		{
+			width: 75%;
+			float: left;
+			
+			&.wide
+			{
+				width: 100%;
+			}
+		}
+		
+		#features
+		{
+			width: 25%;
+			float: right;
+		}
+	}
+}

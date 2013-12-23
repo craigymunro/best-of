@@ -1,0 +1,178 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+.profile
+{
+	> h1
+	{
+		font-size: 1.2em;
+		
+		@media @medium
+		{
+			font-size: 1.5em;
+		}
+	}
+	
+	> dl
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		padding: .75em;
+		
+		> *
+		{
+			float: left;
+			font-size: .85em;
+		}
+		
+		> dt
+		{
+			clear: left;
+			font-weight: bold;
+			color: @charcoal;
+			padding-right: .5em;			
+		}
+	}
+
+	> form,
+	> form > fieldset
+	{
+		position: relative;
+		display: block;
+		float: left;
+		width: 100%;
+		clear: both;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	> form
+	{
+		background-color: #dddddd;
+		border-bottom: 1px solid #bdbdbd;
+	
+		> fieldset
+		{
+			padding: 1em;
+			
+			> *
+			{
+				display: block;
+				float: left;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				clear: both;
+			}
+			
+			> p
+			{
+				padding: .75em 0 1.5em;	
+				font-size: .95em;
+				clear: both;
+				text-align: center;
+				
+				> span
+				{
+					color: @link;
+				}
+			}
+			
+			> label
+			{
+				font-size: .85em;
+				font-weight: bold;
+				padding-bottom: .4em;
+				
+				> span
+				{
+					color: @link;
+					font-weight: bold;
+				}
+			}
+			
+			> textarea
+			{
+				display: block;
+				width: 100%;
+				min-height: 12em;
+				border: 1px solid rgba(0,0,0,.2);
+				margin-bottom: 1em;
+				padding: 1em;
+				font-size: .8em;
+			}
+
+			> input
+			{
+				display: block;
+
+				&[type=text]
+				{
+					padding: .6em;
+					font-size: .8em;					
+					margin-bottom: 1em;
+				}
+				
+				&[type=submit]
+				{
+					clear: left;
+					margin-top: .5em;
+					padding: .75em;
+					border: none;
+					font-weight: bold;
+					font-size: .8em;
+					background-color: @link;
+					color: white;				
+				}
+				
+				@media @medium
+				{
+					width: auto;
+				}
+			}
+			
+			@media @medium
+			{
+				> *
+				{
+					clear: none;
+					width: auto;
+				}
+				
+				> p
+				{
+					width: 100%;
+				}
+				
+				> label
+				{
+					clear: left;
+					min-width: 10em;
+					text-align: right;
+					padding-top: .4em;
+					padding-right: .75em;
+				}
+
+				> input
+				{
+					display: block;
+
+					&[type=submit]
+					{
+						margin-left: 10.7em;
+						width: auto;
+						padding: 1em 1.5em;
+					}
+					
+					&[type=text]
+					{
+						padding: .5em;
+						min-width: 24em;
+					}
+				}
+			}
+		}
+	}
+}

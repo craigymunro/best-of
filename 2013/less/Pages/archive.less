@@ -1,0 +1,45 @@
+@import "../mixins";
+@import "../variables";
+
+#headlines,
+#news
+{
+	float: left;
+	width: 100%;
+}
+
+#headlines
+{
+
+}
+
+#news
+{
+
+}
+
+@media @medium
+{
+	#headlines
+	{
+		width: 66.666%;
+	}
+
+	#news
+	{
+		width: 33.333%;
+	}
+}
+
+.archive
+{
+	> .heading
+	{
+		font-size: 1.3em;
+		
+		@media @medium
+		{
+			font-size: 1.5em;
+		}
+	}
+}

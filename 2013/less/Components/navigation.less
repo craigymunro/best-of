@@ -1,0 +1,278 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+nav
+{
+	position: fixed;
+	top: 3.5em;
+	bottom: 0;
+	width: 100%;
+	left: -100%;
+	background-color: #505050;
+	overflow-y: auto;
+	
+	color: white;
+	z-index: 4;
+
+	transition: .3s;
+	
+	&.active
+	{
+		left: 0;
+		-webkit-overflow-scrolling: touch;
+	}
+	
+	> div
+	{
+		> ul,
+		> ul > li
+		{
+			float: left;
+			width: 100%;
+			clear: both;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		> ul
+		{
+			> li
+			{
+				width: 100%;
+				clear: none;
+				border-bottom: 1px solid rgba(255,255,255,.1);
+				
+				> a
+				{
+					display: block;
+					width: 100%;
+					padding: 1em;
+					font-size: .85em;
+					color: white;
+				}
+			}
+			
+			&.sub-navigation
+			{
+				display: none;
+			}
+		}
+	}
+
+	@media @landscape
+	{
+		> div
+		{
+			> ul
+			{
+				> li
+				{
+					width: 100%;
+					clear: none;
+				}
+			}
+		}
+	}
+
+	@media @xlarge
+	{
+		position: relative;
+		top: auto;
+		bottom: auto;
+		left: auto;
+		right: auto;
+		width: auto;
+		float: left;
+		clear: left;
+		width: 75%;
+		margin: 0;
+		transition: none;
+		background-color: @link;
+		
+		> div
+		{
+			max-width: @max-width;
+			margin: 0 auto;
+			padding: 0;
+			
+			> #search
+			{
+				display: none;
+			}
+			
+			> ul
+			{
+				display: block;
+				float: left;
+				background-color: #ffffff;
+				margin: 0;
+				width: 100%;
+				
+				> li
+				{
+					width: auto;
+					clear: none;
+					border: none;
+					
+					> a
+					{
+						color: black;
+						padding: .75em 1.5em;
+						transition: .2s;
+						
+						&:hover
+						{
+							background-color: @charcoal;
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&.account
+	{
+		left: auto;
+		right: -100%;
+		
+		@media @xlarge
+		{
+			display: block;
+			position: absolute;
+			top: auto;
+			bottom: auto;
+			left: auto;
+			right: 0;
+			width: 25%;
+			z-index: 4;
+			overflow: visible;
+		}
+
+		&.active
+		{
+			left: auto;
+			right: 0;
+		}
+	
+		> div
+		{
+			padding: 1em;
+						
+			> form,
+			> form > fieldset
+			{
+				display: block;
+				margin: 0;
+				padding: 0;
+			}
+			
+			> form
+			{
+				margin-bottom: 1em;
+					
+				> fieldset
+				{				
+					> *
+					{
+						display: block;
+						float: left;
+						clear: both;
+						width: 100%;
+						margin: 0;
+						padding: 0;
+					}
+					
+					> label
+					{
+						font-size: .8em;
+						padding-bottom: .5em;
+						line-height: 1;
+					}
+					
+					> input
+					{
+						font-size: .8em;
+						border: none;
+						padding: .5em;
+	
+						&[type=email],					
+						&[type=password],
+						&[type=text]
+						{
+							margin-bottom: .75em;
+						}
+						
+						&[type=submit]
+						{
+							width: auto;
+						}
+					}
+				}
+				
+				@media @xlarge
+				{
+					position: absolute;
+					display: none;
+					background-color: @charcoal;
+					padding: 1em;
+					top: 3em;
+					left: 1em;
+					right: 1em;
+
+					&.active
+					{
+						display: block;
+					}
+				}
+			}
+			
+			> p
+			{
+				font-size: .8em;
+				
+				> a
+				{
+					font-size: .9em;
+					margin-left: .7em;
+					color: @link;
+					padding: .45em;
+				}
+			}
+
+			> .buttons
+			{
+				display: block;
+				
+				> .button
+				{
+					display: block;
+					clear: both;
+					font-size: .8em;
+					padding: .75em;
+					margin: 0;
+					
+					
+					@media @xlarge
+					{
+						float: left;
+						width: auto;
+						clear: none;
+						margin-right: .75em;
+					}
+					
+					&.sign-in
+					{
+						display: none;
+						
+						@media @xlarge
+						{
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+}

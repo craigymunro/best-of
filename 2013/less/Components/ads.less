@@ -1,0 +1,105 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+.advert
+{
+	display: block;
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	clear: both;
+	width: 100%;
+	
+	*
+	{
+		.box-sizing(content-box);
+	}
+}
+
+.wide-leaderboard
+{
+	width: 1260px;
+	height: auto;
+	//min-height: 110px;
+}
+
+.leaderboard,
+.low-leaderboard
+{
+	width: 728px;
+	max-height: 90px;
+}
+
+.mobile-leaderboard
+{
+	width: 320px;
+	height: 50px;
+}
+
+.mpu
+{
+	width: 300px;
+	height: 250px;
+}
+
+.skin
+{
+	width: 0;
+	height: 0;
+}
+
+.skyscraper
+{
+	width: 300px;
+	height: 600px;
+}
+
+.leaderboards
+{
+	clear: both;
+	max-width: @max-width;
+	margin: 0 auto;
+
+	.mobile-leaderboard
+	{
+		display: block;
+	}
+
+	.leaderboard,
+	.wide-leaderboard
+	{
+		display: none;
+	}
+	
+	@media @medium
+	{		
+		padding: 1.25em 0;
+		
+		.mobile-leaderboard,
+		.wide-leaderboard		
+		{
+			display: none;
+		}
+				
+		.leaderboard
+		{
+			display: block;
+		}
+	}
+		
+	@media @xlarge
+	{
+		padding: 0;
+		
+		.mobile-leaderboard,
+		.leaderboard
+		{
+			display: none;
+		}
+		
+		.wide-leaderboard
+		{
+			display: block;
+		}
+	}
+}

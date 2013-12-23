@@ -1,0 +1,109 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+footer.footer
+{
+	float: left;
+	clear: both;
+	width: 100%;
+	background-color: @link;
+	display: none;
+	-webkit-font-smoothing: antialiased;
+	padding: 1.5em 0;
+	
+	@media @medium
+	{
+		display: block;
+		color: white;
+		
+		a { color: white; }
+		
+		> div
+		{
+			max-width: @max-width;
+			margin: 0 auto;
+			padding: 0 1em;
+			
+			> *
+			{
+				display: block;
+				float: left;
+			}
+			
+			> .logo
+			{
+				width: 20%;
+				font-weight: bold;
+				
+				> img
+				{
+					display: block;
+				}
+			}
+
+			> ul,
+			> ul > li
+			{
+				float: left;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			> ul
+			{
+				width: 40%;
+				padding: 1em 1.75em 0;
+
+				> li
+				{
+					padding-right: .75em;
+					> a
+					{
+						font-size: .8em;
+					}
+				}
+				
+				&.social
+				{
+					float: right;
+					
+					> li
+					{
+						> a
+						{
+							margin-left: .5em;
+							
+							> i
+							{
+								margin-right: .2em;
+							}
+
+							&.facebook
+							{
+								> i { color: @facebook; }
+							}
+	
+							&.google
+							{
+								> i { color: @google; }
+							}
+	
+							&.twitter
+							{
+								> i { color: @twitter; }
+							}
+	
+							&.rss
+							{
+								> i { color: @rss; }
+							}
+							
+						}
+					}
+				}
+			}
+			
+		}
+	}
+}

@@ -1,0 +1,531 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+article
+{
+	position: relative;
+	z-index: 1;
+	float: left;
+	width: 100%;
+	//padding: 1.5em;
+	
+	@media @medium
+	{
+		//padding: 2.5em;
+	}
+
+	> *
+	{
+		float: left;
+		width: 100%;
+		clear: both;
+	}
+
+	> header
+	{
+		padding-bottom: 1em;
+		border-bottom: 1px solid @grey;
+		
+		> h1
+		{
+			position: relative;
+			z-index: 2;
+			float: left;
+			width: 100%;
+			clear: both;
+			background-color: #2c2c2c;
+			color: white;
+			padding: 1em .9em;
+			font-weight: bold;
+			font-size: 1.25em;
+			line-height: 1.3;
+			margin-bottom: .75em;
+		
+			@media @medium
+			{
+				display: block;		
+				padding: 1em 1.35em;
+				font-size: 1.55em;
+			}
+		
+			&:after
+			{
+				font-family: 'FontAwesome';
+				content: "\f0d7";
+				position: absolute;
+				bottom: -.3em;
+				left: 0;
+				right: 0;
+				width: 100%;
+				z-index: 3;
+				color: #2c2c2c;
+				font-size: 2.25em;
+				text-align: center;
+				line-height: .45;
+				overflow: hidden;
+			}	
+			
+		}
+		
+		> p
+		{
+			padding: 1.5em;
+			font-size: .8em;
+			color: #909090;
+			font-weight: bold;
+			
+			@media @medium
+			{
+				padding: 0em 2.5em;
+				font-size: .75em;
+			}
+
+			i
+			{
+				display: inline-block !important;
+				min-width: 1.3em;
+				text-align: center;
+				opacity: .5;
+			}			
+
+			> span,
+			> a
+			{
+				display: block;
+				float: left;
+				clear: both;
+				width: 100%;
+				margin-bottom: .25em;
+				
+				&.author
+				{
+					margin-bottom: 0;
+				}
+	
+				@media @large
+				{
+					width: auto;
+					clear: none;
+					float: right;
+					margin-bottom: 0;
+					
+					&.timestamp
+					{
+						float: left;
+					}
+				}
+			}
+			
+			> a
+			{
+				@media @large
+				{
+					margin-left: 1.25em;
+					
+					> span
+					{
+						display: none;
+					}
+				}
+				
+				> i
+				{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	> section,
+	> footer
+	{
+		padding: 1.5em;
+		font-size: .85em;
+		
+		@media @medium
+		{
+			padding: 2.5em;
+		}	
+	}
+	
+	> footer
+	{
+		padding-top: 0;
+		background-color: transparent;
+		color: black;
+		
+		a { color: @link; }
+		
+		> *
+		{
+			float: left;
+			width: 100%;
+			clear: both;			
+		}
+		
+		> .tags
+		{	
+			padding: 0 0 1.5em;
+			
+			> p
+			{
+				font-size: .95em;
+			}
+		}
+		
+		> .social
+		{
+			padding: 1.5em 0 0;
+			border-top: 1px solid @grey;
+			
+			> a
+			{
+				float: right;
+				font-size: .9em;
+				font-weight: bold;
+				margin-top: .5em;
+				
+				> i
+				{
+					margin-right: .2em;
+				}
+				
+				> span
+				{
+					display: none;
+					
+					@media @medium
+					{
+						display: inline;
+					}					
+				}
+			}
+			
+			> ul,
+			> ul > li
+			{
+				display: block;
+				float: left;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			> ul
+			{
+				> li
+				{
+					width: auto;
+					padding-right: .5em;
+					
+					> strong
+					{
+						display: none;
+						
+						@media @landscape
+						{
+							display: block;
+							font-size: .85em;
+							padding-top: .5em;
+							padding-right: .25em;
+						}
+					}
+
+					> a
+					{
+						display: block;
+						width: 100%;
+						color: white;
+						padding: .75em;
+						background-color: @charcoal;
+						font-size: 1em;
+						line-height: 1;
+						min-width: 2.5em;
+						
+						@media @landscape
+						{
+							font-size: .85em;
+						}
+											
+						> i
+						{
+							display: block;
+							text-align: center;
+							
+							@media @tablet
+							{
+								display: inline-block;
+								margin-right: .25em;
+							}
+						}
+						
+						> span
+						{
+							display: none;
+							
+							@media @tablet
+							{
+								display: inline;
+							}
+
+							&.count
+							{
+								padding-left: .5em;
+							}
+						}
+						
+						&.facebook
+						{
+							background-color: @facebook;
+						}
+
+						&.twitter
+						{
+							background-color: @twitter;
+						}
+
+						&.reddit
+						{
+							background-color: @reddit;
+						}
+					}
+				}
+			}
+		}		
+	}
+	
+	> section
+	{
+		padding-bottom: 0;
+		
+		> p,
+		> ul,
+		> ol,
+		> div,
+		> iframe,
+		> object,
+		> figure
+		{
+			display: block;
+			margin: 0 0 1.5em;
+			padding: 0;
+		}
+		
+		> ul,
+		> ol		
+		{
+			> li
+			{
+				margin: 0 0 0 2em;
+				
+				> span
+				{
+					font-size: inherit !important;
+				}
+			}
+		}
+
+		> ul
+		{
+			> li
+			{
+				list-style: disc;
+			}
+		}		
+		> ol
+		{
+			> li
+			{
+				list-style: decimal;
+			}
+		}
+		
+		> p
+		{
+			max-width: 40em;
+			
+			> b,
+			> strong
+			{
+				color: #202020;
+			}
+		}
+		
+		> .video-container
+		{
+			position: relative;
+			width: 100%;
+			clear: both;
+			height: 0;
+			padding: 0;
+			padding-bottom: 56.25%;
+			
+			> *
+			{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		
+		iframe
+		{
+			width: 100%;
+			max-width: 100%;			
+		}
+		
+		> figure
+		{
+			width: 100%;
+			clear: both;
+			
+			> img
+			{
+				width: 100%;
+				height: auto;
+				cursor: pointer;
+			}
+			
+			> figcaption
+			{
+				padding: 1em 0;
+				font-size: .85em;
+				border-bottom: 1px solid #dadada;
+			}
+		}
+		
+		img
+		{
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+				
+		> .quote,
+		> .boxout
+		{
+			@media @large
+			{
+				float: right;
+				width: 15em;
+				margin: 0 0 1.5em 1.5em;
+			}
+		}
+		
+		> .quote
+		{
+			color: @charcoal;
+			font-weight: bold;
+			padding: 0 1.5em;
+			text-align: center;
+			font-size: 1.4em;
+
+			@media @large
+			{
+				&.left,
+				&.right
+				{
+					padding: 1.5em;
+					background-color: @grey;				
+					font-size: 1.2em;
+				}
+				
+				&.left
+				{
+					float: left;
+					margin-right: 1.5em;
+					margin-left: 0;
+					text-align: right;
+				}
+				
+				&.right
+				{
+					text-align: left;
+					margin-left: 1.5em;
+					margin-right: 0;
+				}
+			}
+		}
+		
+		> .boxout
+		{
+			border: 2px solid @grey;
+			
+			> h3
+			{
+				background-color: @grey;
+				padding: .75em;
+				color: black;
+			}
+			
+			> p
+			{
+				padding: .3em .75em;
+				font-size: .95em;
+				
+				&:first-of-type
+				{
+					padding-top: .75em;
+				}
+
+				&:last-of-type
+				{
+					padding-bottom: .75em;
+				}
+
+			}
+			
+			@media @large
+			{
+				
+			}
+		}
+		
+		> .gallery
+		{
+			float: left;
+			width: 100%;
+			
+			> br
+			{
+				display: none;
+			}
+			
+			> dl
+			{
+				float: left;
+				width: 50%;
+				
+				@media @landscape
+				{
+					width: 33.333%;
+				}
+
+				@media @large
+				{
+					width: 33.333%;
+				}
+				
+				> dt
+				{				
+					> a
+					{
+						display: block;
+						width: 100%;
+						
+						> img
+						{
+							display: block;
+							width: 100%;
+							padding: 0 1em 1em 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

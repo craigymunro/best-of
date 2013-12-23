@@ -1,0 +1,75 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+@border-radius: .25em;
+
+.filter
+{
+	display: block;
+	float: left;
+	width: 100%;
+	clear: both;
+	padding: .75em;
+	background-color: #f2f1f1;
+	border-bottom: 1px solid #e0e0e0;
+				
+	> ul,
+	> ul > li
+	{
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	
+	> ul
+	{
+		border-left: none;
+		border-right: none;
+		
+		> li
+		{
+			width: 33.334%;
+			text-align: center;
+		
+			> a
+			{
+				display: block;
+				width: 100%;
+				font-size: .75em;
+				line-height: 1;
+				padding: .75em 0;
+				background-color: white;
+				color: @link;
+				border: 1px solid @link;
+
+				&:hover,
+				&.active
+				{
+					background-color: #505050;
+					border: 1px solid #505050;
+					
+					font-weight: bold;
+					color: white;
+				}
+				
+				&:active,
+				&.active
+				{
+					background-color: @link;
+					border: 1px solid @link;
+				}
+			}
+			
+			&:nth-of-type(2)
+			{
+				> a
+				{
+					border-left: none;
+					border-right: none;
+				}
+			}
+
+		}
+	}
+}

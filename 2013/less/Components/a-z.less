@@ -1,0 +1,78 @@
+.a-z
+{
+	display: none;
+
+	@media @medium
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		clear: both;
+		padding: 1em 0;
+		background-color: darken(@link, 10%);
+		color: white;
+		
+		> div
+		{
+			max-width: @max-width;
+			margin: 0 auto;
+			padding: 0 1em;
+			
+			> ul,
+			> ul > li
+			{
+				float: left;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			> ul
+			{
+				width: 100%;
+				padding: 0;
+
+				> li
+				{
+					width: 3.57142857142857%;
+					
+					> a
+					{
+						font-size: .8em;
+						text-transform: uppercase;
+						color: white;
+						text-align: center;
+					}
+					
+					&:first-of-type
+					{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	
+	@media @xlarge
+	{
+		> div
+		{
+			> ul
+			{
+				> li
+				{
+					&:first-of-type
+					{
+						display: block;
+						
+						> strong
+						{
+							text-align: left;
+							font-size: .85em;
+						}
+					}
+				}
+			}
+		}
+	}
+}

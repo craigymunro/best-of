@@ -1,0 +1,180 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+.comment-count
+{
+	color: @link;
+	font-size: smaller;
+	font-weight: bold;
+}
+
+.comments
+{
+	float: left;
+	width: 100%;
+	clear: both;
+
+	> form,
+	> form > fieldset
+	{
+		position: relative;
+		display: block;
+		float: left;
+		width: 100%;
+		clear: both;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	> form
+	{
+		background-color: #dddddd;
+		padding: 0 1em 1em;
+		
+		&.disabled
+		{
+			> fieldset
+			{
+				> textarea,
+				> input[type=submit]
+				{
+					opacity: .5;
+				}
+			}
+		}
+		
+		> fieldset
+		{
+			> *
+			{
+				display: block;
+				float: left;
+				width: 100%;
+				clear: both;
+				margin: 0;
+				padding: 0;
+			}
+									
+			> textarea
+			{
+				display: block;
+				width: 100%;
+				min-height: 12em;
+				border: 1px solid rgba(0,0,0,.2);
+				margin-bottom: 1em;
+				padding: 1em;
+				font-size: .8em;
+				-webkit-appearance: none;
+				.border-radius(0);
+			}
+
+			> input[type=submit]
+			{
+				display: block;
+				padding: .75em;
+				border: none;
+				font-weight: bold;
+				font-size: .8em;
+				background-color: @link;
+				color: white;
+				transition: .15s;
+				-webkit-appearance: none;
+				.border-radius(0);
+												
+				@media @medium
+				{
+					width: auto;
+				}
+				
+				&:focus
+				{
+					box-shadow: 0 0 10px darken(@link, 10%);
+				}
+			}
+			
+			> p
+			{
+				font-size: .8em;
+				padding: 1em 0 .5em;
+			}
+		}
+	}
+	
+	> ol,
+	> ol > li
+	{
+		position: relative;
+		margin: 0;
+		padding: 0;
+		float: left;
+		width: 100%;
+		clear: both;
+		list-style: none;
+	}
+	
+	> ol
+	{
+		background-color: #f2f1f1;
+		
+		> li
+		{
+			padding: .75em;
+			padding-left: 5.75em;
+			border-top: 1px solid #fdfbf9;
+			border-bottom: 1px solid #d4d4d3;
+			
+			&:first-of-type
+			{
+				border-top-width: 0;
+			}
+
+			&:last-of-type
+			{
+				border-bottom-width: 0;
+			}
+			
+			> h4
+			{
+				font-size: .8em; 
+			}
+			
+			> p
+			{
+				font-size: .8em;
+				font-weight: normal;
+				padding-bottom: .75em;
+				
+				&:last-of-type
+				{
+					padding-bottom: 0;
+				}
+			}
+			
+			> div
+			{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 5em;
+				background-color: #e8e8e8;
+				text-align: center;
+				padding: 1em 0;
+				line-height: 1;
+				
+				> *
+				{
+					display: block;
+					font-size: .7em;
+					padding: 0 .5em;
+				}
+				
+				> a
+				{
+					margin-bottom: .5em;
+				}
+			}
+		}
+	}
+}

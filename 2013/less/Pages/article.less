@@ -1,0 +1,34 @@
+@import "../mixins";
+@import "../variables";
+
+#article
+#news
+{
+	float: left;
+}
+
+#article
+{
+	width: 100%;
+	
+	@media @medium
+	{
+		padding-right: 318px;
+	}
+}
+
+#news
+{
+	display: none;
+	
+	@media @medium
+	{
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+
+		width: 318px;
+	}
+}

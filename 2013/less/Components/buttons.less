@@ -1,0 +1,90 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+.button
+{
+	display: inline-block;
+	background-color: @link;
+	color: white;
+	padding: @padding / 2;
+	line-height: 1;
+	font-size: .85em;
+	font-weight: bold;
+	border: none;
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+	vertical-align: bottom;
+	transition: .3s;
+
+	&:hover {
+		background-color: #505050;
+		color: white;
+	}
+		
+	&.active {
+		background-color: black;
+		color: white;
+	}
+	
+	> i {
+		padding: 0 @padding / 3;
+		text-align: center;
+		opacity: .8;		
+	}
+	
+	&.small {
+		font-size: smaller;
+	}
+
+	&.large {
+		font-size: larger;
+	}
+	
+	&.ok {
+		background-color: green;		
+		&:hover { background-color: darken(green, 10%); }
+		
+		&:before
+		{
+			font-family: "FontAwesome";
+			content: "\F00C";
+			margin-right: .5em;
+			opacity: .8;
+		}
+	}
+
+	&.cancel {
+		background-color: red;
+		&:hover { background-color: darken(red, 10%); }
+
+		&:before
+		{
+			font-family: "FontAwesome";
+			content: "\F00D";
+			margin-right: .5em;
+			opacity: .8;
+		}
+	}
+
+	&.disabled {
+		background-color: @charcoal;
+		opacity: .25;
+	}
+}
+
+.button-group
+{
+	float: left;
+	clear: both;
+	margin-bottom: @margin / 2;
+	
+	> .button
+	{
+		margin-right: @margin;
+	}
+	
+	&:last-of-type
+	{
+		margin-bottom: 0;
+	}
+}

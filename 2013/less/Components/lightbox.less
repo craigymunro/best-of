@@ -1,0 +1,75 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+body
+{
+	> .lightbox-popup
+	{
+		position: fixed;
+		display: none;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 20;
+		display: none;
+		background-color: transparent;
+		padding: 4.5em 1em 0 1em;
+		background-color: rgba(0,0,0,.75);
+		cursor: pointer;
+
+		&.active
+		{
+			display: block;	
+		}
+		
+		> *
+		{
+			position:absolute;
+			top:0;
+			bottom:0;
+			left: 0;
+			right: 0;
+			width: auto;
+			height: auto;
+			margin:auto;
+			max-width: 95%;
+			max-height: 95%;
+			text-align: center;
+			z-index: 2;
+		}
+				
+		> img
+		{
+			background-color: black;
+			box-shadow: 0 0 30px black;
+			z-index: 1;
+		}
+		
+		> .loading
+		{
+			background-color: rgba(255,255,255,.9);
+			border-radius: .25em;
+			color: black;
+			opacity: .7;
+			width: 200px;
+			height: 2.5em;
+			line-height: 2.5em;
+			font-weight: bold;
+			color: black;
+			text-shadow: 0 -1px 1px white;
+			display: none;
+			
+			> i
+			{
+				margin-right: .4em;
+			}
+		}
+		
+		> .loading.active
+		{
+			display: block;
+		}
+		
+	}
+}

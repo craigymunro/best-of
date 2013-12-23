@@ -1,0 +1,313 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+body
+{	
+	@media @xlarge
+	{
+		padding-top: 0;
+	}
+	
+	> header
+	{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		background-color: @link;
+		z-index: 4;
+		min-width: @min-width;
+		overflow: hidden;
+		
+		@media @xlarge
+		{
+			padding: 0 1em;
+			overflow: visible;
+		}
+			
+		> div
+		{
+			position: relative;
+			max-width: @max-width;
+			margin: 0 auto;
+			
+			> *
+			{
+				position: relative;
+				display: block;
+			}
+			
+			> .logo
+			{
+				display: block;
+				color: white;
+				text-align: center;
+				z-index: 1;
+				padding: .6em;
+				
+				@media @tablet
+				{
+					padding: 1em;
+				}
+
+				@media @xlarge
+				{
+					padding: 1em 0;
+				}
+
+				> img
+				{
+					display: block;
+					text-align: center;
+					margin: 0 auto;
+					max-width: 6em;
+					
+					@media @xlarge
+					{
+						padding: 0;
+						max-width: 100%;
+					}
+				}
+			}
+			
+			> .social
+			{
+				display: none;
+			}
+			
+			> .button
+			{
+				position: absolute;
+				top: 0;
+				z-index: 2;				
+
+				background-color: transparent;
+				padding: .85em;
+				color: white;
+				line-height: 1;
+				
+				@media @tablet
+				{
+					padding: 1.25em 1em;
+				}
+				
+				> *
+				{
+					line-height: 1;
+					display: inline-block;
+				}
+				
+				> span
+				{
+					display: none;
+					
+					@media @landscape
+					{
+						display: inline;
+						font-weight: bold;
+						font-size: .8em;
+						padding-left: .25em;
+						line-height: normal;
+					}
+				}
+								
+				&.navigation
+				{
+					left: 0;
+				}
+
+				&.account
+				{
+					right: 0;
+				}
+			}
+
+			.promos
+			{
+				display: none;
+				
+				@media @xlarge
+				{
+					float: left;
+					display: block;
+					width: 50%;
+					padding: 1em;
+					
+					> ul,
+					> ul > li
+					{
+						float: left;
+						width: 100%;
+						clear: both;
+						margin: 0;
+						padding: 0;
+						list-style: none;
+					}
+					
+					> ul
+					{
+						> li
+						{
+							width: 50%;
+							height: 3.65em;
+							clear: none;
+							color: white;
+							padding: 0 1em;
+							border-right: 1px solid rgba(255,255,255,.3);
+							
+							> h5
+							{
+								font-size: .85em;
+								line-height: 1.2;
+								padding-bottom: .2em;
+								
+								> a
+								{
+									color: white;
+								}
+							}
+							
+							> p
+							{
+								font-size: .75em;
+							}
+
+							&:nth-of-type(2),
+							&:nth-of-type(3)
+							{
+								border-right: none;
+							}						
+															
+							&:nth-of-type(3)
+							{
+								display: none;
+							}
+							
+							&:first-of-type
+							{
+								padding-left: 0;
+							}
+
+							&:last-of-type
+							{
+								padding-right: 0;
+							}
+
+						}
+					}
+				}
+				
+				@media @large
+				{
+					width: 50%;
+					
+					> ul
+					{
+						> li
+						{
+							width: 33.333%;
+
+							&:nth-of-type(2)
+							{
+								border-right: 1px solid rgba(255,255,255,.3);
+							}
+							
+							&:nth-of-type(3)
+							{
+								display: block;
+							}
+						}
+					}
+				}
+			}			
+		}
+		
+		@media @xlarge
+		{
+			position: relative;
+			float: left;
+			width: 100%;
+			clear: both;
+			
+			> div
+			{
+				> .logo
+				{
+					float: left;
+					width: 20%;
+					text-align: left;
+
+					> img
+					{
+						float: left;
+					}
+				}
+				
+				> .social
+				{
+					position: absolute;
+					top: 3.55em;
+					right: 0;
+					display: block;
+					width: 25%;
+					margin: 0;
+					padding: 0 0 0 1em;
+					line-height: 1;
+					z-index: 3;
+					
+					> a
+					{
+						float: left;
+						display: block;
+						color: white;
+						width: auto;
+						padding: .3em .7em;
+						margin: 0 .25em 0 0;
+						
+						&.facebook
+						{
+							background-color: @facebook;
+						}
+
+						&.twitter
+						{
+							background-color: @twitter;
+						}
+
+						&.youtube
+						{
+							background-color: white;
+							color: @youtube;
+						}
+
+						&.rss
+						{
+							background-color: @rss;
+						}
+
+					}
+				}
+				
+				> .button
+				{
+					display: none;
+				}
+				
+				> .promos
+				{
+					width: 50%;
+				}
+				
+				> #search
+				{
+					float: right;
+					clear: none;
+					width: 25%;
+					background-color: transparent;
+					margin: 0;
+					padding: 0 0 0 1em;
+				}
+			}
+		}
+	}
+}

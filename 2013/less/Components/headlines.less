@@ -1,0 +1,263 @@
+/*
+Name: Headlines
+Description: Used for displaying a list of articles in a full-width article format.
+*/
+
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+.top-story
+{
+	position: relative;
+	float: left;
+	width: 100%;
+	clear: both;
+	
+	> .cover
+	{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		background-position: center center;
+		background-size: auto 100%;
+		background-size: cover;
+		z-index: 1;
+	}
+	
+	> div
+	{
+		position: relative;
+		float: left;
+		width: 100%;
+		clear: both;
+		z-index: 2;
+		margin-top: 10em;
+		background-color: white;
+		background-color: rgba(255,255,255,.75);
+		padding: 1.5em;
+		text-align: center;
+		
+		@media @large
+		{
+			margin-top: 15.5em;
+		}
+		
+		> h1,
+		> h2
+		{
+			font-size: 1.5em;
+			font-weight: bold;
+			color: black;
+			line-height: 1.2;
+			padding: 0 .75em .3em;
+			
+			a
+			{
+				color: @link;
+				transition: .1s;
+
+				&:visited
+				{
+					color: lighten(@link, 20%);
+				}
+				
+				&:hover
+				{
+					color: darken(@link, 10%);
+				}
+				
+				&:active
+				{
+					color: darken(@link, 20%);
+				}							
+			}
+		}
+		
+		> p
+		{
+			font-size: .85em;
+			clear: both;
+			padding-bottom: .5em;
+		}
+
+		> .comment-count
+		{
+			float: left;
+			font-size: .7em;
+		}
+		
+		> .timestamp
+		{
+			float: right;
+			font-size: .75em;
+			padding-top: .5em;
+			font-weight: bold;
+			color: #909090;
+		}		
+	}
+}
+
+.headlines
+{
+	float: left;
+	width: 100%;
+	clear: both;
+	background-color: #edecec;
+	
+	> ul,
+	> ul > li
+	{
+		position: relative;
+		margin: 0;
+		padding: 0;
+		float: left;
+		width: 100%;
+		clear: both;
+		list-style: none;
+	}
+	
+	> ul
+	{
+		> li
+		{
+			padding: 1em;
+			padding-right: 7em;
+			min-height: 8em;
+			border-top: 1px solid #fdfbf9;
+			border-bottom: 1px solid #d1d1d1;
+
+			&:first-of-type
+			{
+				border-top-width: 0;
+			}
+			
+			&:last-of-type
+			{
+				border-bottom-width: 0;
+			}
+			
+			> h2
+			{
+				font-size: 1em;
+				line-height: 1.25;
+				padding-bottom: .2em;
+				
+				a
+				{
+					color: @link;
+				}
+			}
+			
+			> p
+			{
+				font-size: .8em;
+				padding-bottom: .25em;
+			}
+			
+			> .comment-count
+			{
+				font-size: .7em;
+			}
+			
+			> .timestamp
+			{
+				float: right;
+				font-size: .7em;
+				padding-top: .5em;
+				font-weight: bold;
+				color: #909090;
+			}
+			
+			> .cover
+			{
+				position: absolute;
+				top: -1px;
+				bottom: -1px;
+				right: 0;
+				width: 6em;
+				background-color: black;
+				background-position: center center;
+				background-size: auto 100%;
+				background-size: cover;
+			}
+			
+			@media @medium
+			{
+				padding-right: 14em;
+				
+				> .cover
+				{
+					width: 13em;
+				}
+			}
+
+			&.no-image
+			{
+				padding-right: 1em;
+			}			
+		}
+	}
+	
+	&.left
+	{
+		> ul
+		{
+			> li
+			{
+				@media @medium
+				{
+					padding-left: 14em;
+					padding-right: 1em;
+			
+					> .cover
+					{
+						left: 0;
+						right: auto;
+					}
+				}
+			}
+		}
+	}
+	&.large
+	{
+		@media @large
+		{
+			> ul
+			{
+				> li
+				{
+					padding-right: 18em;
+					
+					> .cover
+					{
+						width: 17em;
+					}				
+				}
+			}
+		}
+	}
+
+	&.narrow
+	{
+		@media @large
+		{
+			> ul
+			{
+				> li
+				{
+					padding-right: 11em;
+					
+					> .cover
+					{
+						width: 10em;
+					}				
+				}
+			}
+		}
+	}
+}

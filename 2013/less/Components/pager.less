@@ -1,0 +1,44 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+.pager
+{
+	float: left;
+	width: 100%;
+	clear: both;
+	margin: 0;
+	padding: .75em;
+	background-color: @charcoal;
+	
+	> p,
+	> div
+	{
+		font-size: .8em;
+	}
+	
+	> p
+	{
+		float: left;
+		color: white;
+	}
+	
+	> div
+	{
+		float: right;
+		
+		> a
+		{
+			float: left;
+			
+			&:first-of-type
+			{
+				margin-right: .75em;
+			}
+			
+			&:only-of-type
+			{
+				margin-right: 0;
+			}
+		}
+	}
+}

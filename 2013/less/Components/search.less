@@ -1,0 +1,116 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+#search,
+#search > fieldset
+{
+	position: relative;
+	display: block;
+	float: left;
+	width: 100%;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#search
+{
+	background-color: black;
+	padding: 1em;
+	
+	> fieldset
+	{
+		> input
+		{
+			display: block;
+			float: left;
+			width: 100%;
+			clear: both;
+			margin: 0;
+			
+			&[type=text]
+			{
+				position: relative;
+				width: 100%;
+				padding: .65em;
+				padding-right: 6em;
+				font-size: .75em;
+				border: none;
+			}
+	
+			&[type=submit]
+			{
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: 5em;
+				-webkit-appearance: none;
+				border: none;
+				background-color: #505050;
+				color: white;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+}
+
+.generic-search,
+.generic-search > fieldset
+{
+	position: relative;
+	display: block;
+	float: left;
+	width: 100%;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+}
+
+.generic-search
+{
+	max-width: 24em;
+	padding: 1em 0 0;
+	margin: 0 auto;
+	float: none;
+	
+	> fieldset
+	{
+		> input
+		{
+			display: block;
+			float: left;
+			width: 100%;
+			clear: both;
+			margin: 0;
+			
+			&[type=text]
+			{
+				position: relative;
+				width: 100%;
+				padding: 1em;
+				padding-right: 6em;
+				border: 1px solid @charcoal;
+			}
+	
+			&[type=submit]
+			{
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: 5em;
+				-webkit-appearance: none;
+				border: none;
+				background-color: #505050;
+				color: white;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+}

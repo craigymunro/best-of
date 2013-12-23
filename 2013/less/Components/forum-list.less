@@ -1,0 +1,76 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+.forum-list
+{	
+	> .heading
+	{
+		background-color: @link;
+
+		&:after
+		{
+			color: @link;
+		}
+	}
+
+	> ul,
+	> ul > li
+	{
+		position: relative;
+		margin: 0;
+		padding: 0;
+		float: left;
+		width: 100%;
+		clear: both;
+		list-style: none;
+	}
+	
+	> ul
+	{
+		background-color: #280b10;
+		color: white;
+		
+		> li
+		{
+			padding: 1em;
+			padding-left: 4.5em;
+			border-bottom: 1px solid #6b2436;
+			
+			&:first-of-type
+			{
+				border-top-width: 0;
+			}
+
+			&:last-of-type
+			{
+				border-bottom-width: 0;
+			}
+			
+			> h2
+			{
+				font-size: .8em;
+				font-weight: normal;
+			}
+			
+			> p
+			{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 3.5em;
+				background-color: #3c111b;
+				text-align: center;
+				padding: 1em 0;
+				line-height: 1;
+				color: white;
+				
+				> span
+				{
+					display: block;
+					font-size: .7em;
+				}
+			}
+		}
+	}
+}

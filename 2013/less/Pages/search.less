@@ -1,0 +1,102 @@
+@import "../mixins";
+@import "../variables";
+
+.search
+{
+	position: relative;
+	float: left;
+	width: 100%;
+	clear: both;
+	
+	> p
+	{
+		clear: both;
+		padding: 1.25em 0 1em;
+		font-size: .85em;
+		text-align: center;
+	}
+	
+	#refine
+	{
+		form,
+		form > fieldset
+		{
+			position: relative;
+			display: block;
+			float: left;
+			width: 100%;
+			clear: both;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		> form
+		{
+			height: 100%;
+			background-color: #dddddd;
+			padding: 1em;
+
+			> fieldset
+			{
+				margin-bottom: 1em;
+								
+				> input
+				{
+					display: block;
+					float: left;
+					width: 100%;
+					clear: both;
+					margin: 0;
+					
+					&[type=text]
+					{
+						position: relative;
+						width: 100%;
+						padding: 1em;
+						padding-right: 6em;
+					}
+			
+					&[type=submit]
+					{
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						width: 5em;
+						-webkit-appearance: none;
+						border: none;
+						background-color: #505050;
+						color: white;
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+					}
+				}
+			}
+		}		
+	}
+	
+	@media @medium
+	{
+		#refine,
+		#results
+		{
+			float: left;
+		}
+		
+		#refine
+		{
+			position: absolute;
+			left: 0;
+			height: 100%;
+			width: 333px;
+			border-right: 1px solid #c0c0c0;
+		}
+		
+		#results
+		{
+			width: 100%;
+			padding-left: 333px;
+		}
+	}
+}

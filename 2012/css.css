@@ -1,0 +1,116 @@
+html
+{
+	font-family: serif;
+}
+
+body,
+body *
+{
+	box-sizing: border-box;
+}
+
+body
+{
+	font-size: 1.2em;
+}
+
+a
+{
+	color: inherit;
+}
+
+header
+{
+	text-align: center;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #eaeaea;
+}
+
+header > h1,
+header > p
+{
+	margin: 0;
+	padding: 0;
+}
+
+header > p:first-of-type
+{
+	color: #c0c0c0;
+	font-weight: bold;
+	padding-top: 0.1em;
+}
+
+h1
+{
+	font-size: 2.2em;
+}
+
+h2
+{
+	font-size: 1.4em;
+	margin: 0 0 5px;
+	padding: 0;
+	line-height: 30px;
+}
+
+h3
+{
+	font-size: 18px;
+	color: #a0a0a0;
+}
+
+.wrapper
+{
+	min-width: 320px;
+	max-width: 1200px;
+	margin: 30px auto;
+}
+
+.wrapper > .page > div
+{
+	float: left;
+	clear: none;
+	width: 50%;
+	margin-top: 15px;
+	padding: 20px;
+	letter-spacing: normal;
+
+}
+
+.wrapper > .page > div:last-of-type > h2
+{
+	font-size: 1.1em;
+}
+
+.wrapper > .page > p
+{
+	float: left;
+	clear: both;
+	width: 100%;
+	margin: 0;
+	padding: 30px 0;
+	text-align: center;
+	font-size: 0.8em;
+	border-top: 1px solid #e0e0e0;
+}
+
+@media screen and (max-width: 768px)
+{
+	body
+	{
+		-webkit-text-size-adjust: none;
+	}
+	
+	.wrapper
+	{
+		max-width: 100%;
+	}
+	
+	.wrapper > .page > div
+	{
+		clear: both;
+		width: 100%;
+		padding-bottom: 0;
+	}
+	
+}

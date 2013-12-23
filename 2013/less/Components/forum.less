@@ -1,0 +1,167 @@
+@import "../Helpers/mixins";
+@import "../Helpers/variables";
+
+.thread-list,
+.thread-list > ul,
+.thread-list > ul > li
+{
+	float: left;
+	width: 100%;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.thread-list
+{
+	min-width: @min-width;
+	
+	> ul
+	{
+		background-color: #f2f1f1;
+		
+		> li
+		{
+			padding: .75em;
+			border-top: 1px solid #fdfbf9;
+			border-bottom: 1px solid #d4d4d3;
+			
+			&:first-of-type
+			{
+				border-top-width: 0;
+			}
+
+			&:last-of-type
+			{
+				border-bottom-width: 0;
+			}
+			
+			&.sticky,
+			&:hover
+			{
+				background-color: #d4d4d3;
+				border-top-color: #f0f0f0;
+				border-bottom-color: #c5c5c4;
+			}
+			
+			&.sticky
+			{
+				> h2
+				{
+					font-size: .95em;
+				}
+			}
+			
+			> h2,
+			> p
+			{
+				float: left;
+				width: 100%;
+				clear: both;
+			}
+			
+			> h2
+			{
+				font-size: .85em;				
+				color: black;
+				
+				> a
+				{
+					color: @link;
+				}
+				
+				> .pages
+				{
+					display: none;					
+				}				
+			}
+			
+			> p
+			{
+				font-size: .8em;
+
+				> span
+				{
+					float: left;
+					
+					&:nth-of-type(1)
+					{
+						width: 25%;
+					}
+
+					&:nth-of-type(2),
+					&:nth-of-type(3)					
+					{
+						width: 37.5%;
+					}					
+
+					> span
+					{
+						display: block;
+						font-size: .85em;
+					}					
+				}
+			}
+		}
+	}
+
+	&.gt600
+	{		
+		> ul
+		{
+			> li
+			{
+				> h2,
+				> p
+				{
+					clear: none;
+				}		
+
+				> h2
+				{
+					width: 60%;
+
+					> .pages
+					{
+						font-size: .8em;
+						margin-left: .75em;
+						
+						> a
+						{
+							display: inline-block;
+							padding: .25em;
+							min-width: 2em;
+							text-align: center;
+							background-color: @link;
+							color: white;
+						}
+						
+						> span
+						{
+							color: #808080;
+							font-weight: normal;
+						}
+					}
+				}
+				
+				> p
+				{
+					width: 40%;
+
+					> span
+					{
+						width: 33.333% !important;
+						text-align: center;
+						
+						> span
+						{
+						
+							display: none;
+						}
+					}
+				}
+			}		
+		}
+	}
+}
