@@ -25,6 +25,18 @@ error_reporting(E_ALL);
     <script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/effects.js"></script>
 	<script src="scripts/BestOf.js?v=<?=microtime(true);?>"></script>
+
+<!--[if lt IE 9]>
+<script>
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('article');
+document.createElement('aside');
+document.createElement('footer');
+document.createElement('hgroup');
+</script>
+<![endif]-->
 </head>
 <body>
 
