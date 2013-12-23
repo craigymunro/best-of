@@ -44,7 +44,7 @@ document.createElement('footer');
 	
 	<?
 	$items = array(
-		array("title" => "Only God Forgives", "image" => "ogf1.jpg", "why" => "Stunning cinematography, and a rewarding experience if you can get a read on this film. One for the truly patent."),
+		array("title" => "Only God Forgives", "image" => "ogf1.jpg", "why" => "Refn's purposeful turn away from Hollywood following Drive, <em>Only</em> delivers cinematography oozing with meaning. A rewarding experience if you have the patience to read deep into this film."),
 		array("title" => "The Place Beyond The Pines", "image" => "pines.jpg", "why" => "Cianfrance's epic about fathers and sons is a lesson in classical structure. Beautiful naturalistic cinematography and some iconic characterisations."),
 		array("title" => "Promised Land", "image" => "matt-damon-promised-land-movie.jpg", "why" => "A timely film about fracking, it weighs important decisions about legacy, heritage, and providing a future for your family."),
 		array("title" => "Side Effects", "image" => "side_effects_29.jpg", "why" => "Hopefully not Soderbergh's last picture, this ensemble psychological-thriller managed to keep me off kilter as it veered in different directions."),
@@ -53,7 +53,8 @@ document.createElement('footer');
 		array("title" => "Jack Reacher", "image" => "jack_reacher_7.jpg", "why" => "Tom Cruise isn't the image of Jack Reacher from the novels, but Christopher McQuarrie orchestrated some tense scenes in this triller."),
 		array("title" => "Clear History", "image" => "Clear-History-danny-mcbride-bill-hader-michael-keaton-larry-david.jpg", "why" => "Technically a movie (though broadcast on HBO) Larry David does <em>Curb</em> without doing <em>Curb</em>."),
 		array("title" => "Les Miserables", "image" => "Les_Miserables_2012.jpg", "why" => "Excusing Crowe's voice, this was a landmark piece for all actors involved."),
-		array("title" => "Trouble With the Curve", "image" => "trouble-with-the-curve-still07.jpg", "why" => "A modest film about a soon-to-be-replaced baseball scout, this was Clint Eastwood's first appearance in front of the camera since 2008."),
+		#array("title" => "Trouble With the Curve", "image" => "trouble-with-the-curve-still07.jpg", "why" => "A modest film about a soon-to-be-replaced baseball scout, this was Clint Eastwood's first appearance in front of the camera since 2008."),
+		array("title" => "Gravity", "image" => "gravity4.jpg", "why" => "Cuaron's experimental film had huge impact on the big screen, and was full of heart-stopping, sweaty-palm moments. Those complaining about the lack of a great narrative in this film miss the point of this technical marvel."),
 	);
 	
 	$h = array("left", "right");
