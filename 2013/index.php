@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<? $title = "Best of 2013"; ?>
+	<? $title = "A year in film, 2013"; ?>
 	<title><?=$title?></title>
 	
 	<link rel="stylesheet/less" href="less/Projects/BestOf2013/base.less?v=<?=microtime(true);?>"/>
@@ -18,20 +18,12 @@ error_reporting(E_ALL);
 
 	<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
 	<script>
-	  WebFont.load({
-	    google: {
-	      families: ['Crimson Text']
-	    }
-	  });
+		WebFont.load({ google: { families: ['Crimson Text'] } });
 	</script>
 	
     <script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/effects.js"></script>
 	<script src="scripts/BestOf.js?v=<?=microtime(true);?>"></script>
-		
-	<!-- FONTS -->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/font-awesome.css" />
-
 </head>
 <body>
 
