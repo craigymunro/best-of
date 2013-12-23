@@ -52,7 +52,7 @@ document.createElement('footer');
 		array("title" => "Hitchcock", "image" => "tXqU8FznaIfCaDCraAiKc1OAjrn.jpg", "why" => "More fun than <em>The Girl</em>, the insinuating BBC drama about Hitch from 2013, this was a loving homage to the master of suspense."),
 		array("title" => "Jack Reacher", "image" => "jack_reacher_7.jpg", "why" => "Tom Cruise isn't the image of Jack Reacher from the novels, but Christopher McQuarrie orchestrated some tense scenes in this triller."),
 		array("title" => "Clear History", "image" => "Clear-History-danny-mcbride-bill-hader-michael-keaton-larry-david.jpg", "why" => "Technically a movie (though broadcast on HBO) Larry David does <em>Curb</em> without doing <em>Curb</em>."),
-		array("title" => "Les Miserables", "image" => "Les_Miserables_2012.jpg", "why" => "Excusing Crowe's voice, this was a landmark piece for all actors involved."),
+		array("title" => "Les Miserables", "image" => "Les_Miserables_2012.jpg", "why" => "Excusing Crowe's voice, this was a landmark piece for all actors involved. Special mention goes to the sound design team for capturing the sound live and not using dubbing for the songs."),
 		#array("title" => "Trouble With the Curve", "image" => "trouble-with-the-curve-still07.jpg", "why" => "A modest film about a soon-to-be-replaced baseball scout, this was Clint Eastwood's first appearance in front of the camera since 2008."),
 		array("title" => "Gravity", "image" => "gravity4.jpg", "why" => "Cuaron's experimental film had huge impact on the big screen, and was full of heart-stopping, sweaty-palm moments. Those complaining about the lack of a great narrative in this film miss the point of this technical marvel."),
 	);
