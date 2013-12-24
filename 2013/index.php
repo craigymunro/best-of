@@ -1,15 +1,20 @@
 <?
 ini_set('display_errors',1); 
 error_reporting(E_ALL);
+$debug = array_key_exists("debug", $_GET);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<? $title = "A year in film, 2013"; ?>
 	<title><?=$title?></title>
+		
+	<? if($debug) { ?>
+		<link rel="stylesheet/less" href="less/Projects/BestOf2013/base.less?v=<?=microtime(true);?>"/>
+	<? } else { ?>
+		<link rel="stylesheet" href="base.css"/>	
+	<? } ?>
 	
-	<link rel="stylesheet" href="base.css"/>
-	<!--link rel="stylesheet/less" href="less/Projects/BestOf2013/base.less?v=<?=microtime(true);?>"/-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />	
 	<script>
 		localStorage.clear();
