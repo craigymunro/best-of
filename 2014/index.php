@@ -3,12 +3,18 @@
 	<title>Best of, 2014</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
-	
-	<link rel="stylesheet/less" type="text/css" href="less/base.less" />	
+		
+	<? $debug = false; ?>
+
+	<? if($debug) { ?>
+		<link rel="stylesheet/less" type="text/css" href="less/base.less" />	
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.2/less.min.js"></script>
+	<? } else { ?>
+		<link rel="stylesheet" type="text/css" href="css/base.css" />	
+	<? } ?>
+
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
 
-	<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.2/less.min.js"></script>
 
 	<script src="//use.typekit.net/qew6vet.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
