@@ -1,4 +1,4 @@
-<?
+<?php
 ini_set('display_errors',1); 
 error_reporting(E_ALL);
 $debug = array_key_exists("debug", $_GET);
@@ -6,21 +6,21 @@ $debug = array_key_exists("debug", $_GET);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<? $title = "A year in film, 2013"; ?>
-	<title><?=$title?></title>
+	<?php $title = "A year in film, 2013"; ?>
+	<title><?php echo $title?></title>
 		
-	<? if($debug) { ?>
-		<link rel="stylesheet/less" href="less/Projects/BestOf2013/base.less?v=<?=microtime(true);?>"/>
-	<? } else { ?>
+	<?php if($debug) { ?>
+		<link rel="stylesheet/less" href="less/Projects/BestOf2013/base.less?v=<?php echo microtime(true);?>"/>
+	<?php } else { ?>
 		<link rel="stylesheet" href="base.css"/>	
-	<? } ?>
+	<?php } ?>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />	
 	<script>
 		localStorage.clear();
 		less = {}; less.env = 'development';
 	</script>
-	<script src="scripts/less.js?v=<?=microtime(true);?>"></script>	
+	<script src="scripts/less.js?v=<?php echo microtime(true);?>"></script>	
 
 	<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
 	<script>
@@ -29,7 +29,7 @@ $debug = array_key_exists("debug", $_GET);
 	
     <script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/effects.js"></script>
-	<script src="scripts/BestOf.js?v=<?=microtime(true);?>"></script>
+	<script src="scripts/BestOf.js?v=<?php echo microtime(true);?>"></script>
 
 <!--[if lt IE 9]>
 <script>
@@ -43,11 +43,11 @@ document.createElement('footer');
 <body>
 
 	<header>
-		<h1><?=$title?></h1>
+		<h1><?php echo $title?></h1>
 		<p>This year I watched almost one hundred films. Here's a list of my ten favourite films of 2013.</p>
 	</header>
 	
-	<?
+	<?php
 	$items = array(
 		array("title" => "Only God Forgives", "image" => "ogf1.jpg", "why" => "Refn's purposeful turn away from Hollywood following Drive, <em>Only</em> delivers cinematography oozing with meaning. A rewarding experience if you have the patience to read deep into this film."),
 		array("title" => "The Place Beyond The Pines", "image" => "pines.jpg", "why" => "Cianfrance's epic about fathers and sons is a lesson in classical structure. Beautiful naturalistic cinematography and some iconic characterisations."),
@@ -68,22 +68,22 @@ document.createElement('footer');
 	?>
 	
 	<main tabindex="-1">
-		<? foreach(array_reverse($items) as $key => $item) { ?>
+		<?php foreach(array_reverse($items) as $key => $item) { ?>
 			<section>
-				<a name="<?=$p?>"></a>
-				<div class="cover" style="background-image: url(images/<?=$item["image"]?>);"></div>
+				<a name="<?php echo $p?>"></a>
+				<div class="cover" style="background-image: url(images/<?php echo $item["image"]?>);"></div>
 			
-				<div class="details <?=$h[$key % 2]?> <?=$v[$key % 3]?>">
-					<span>Number <?=$p?></span>
-					<h2><?=$item["title"]?></h2>
+				<div class="details <?php echo $h[$key % 2]?> <?php echo $v[$key % 3]?>">
+					<span>Number <?php echo $p?></span>
+					<h2><?php echo $item["title"]?></h2>
 					
-					<p><?=$item["why"]?></p>
+					<p><?php echo $item["why"]?></p>
 				</div>
 				
 			</section>
 			
-			<? $p--; ?>
-		<? } ?>
+			<?php $p--; ?>
+		<?php } ?>
 
 		<section>
 			<a name="11"></a>
@@ -113,9 +113,9 @@ document.createElement('footer');
 	
 	<footer>
 		<div>
-			<? for($i = 10; $i >= 1; $i--) { ?>
-				<a href="#<?=$i?>" data-shortcut="<?=$i?>"><?=$i?></a>
-			<? } ?>
+			<?php for($i = 10; $i >= 1; $i--) { ?>
+				<a href="#<?php echo $i?>" data-shortcut="<?php echo $i?>"><?php echo $i?></a>
+			<?php } ?>
 			<a href="#11" data-shortcut="11">Extra!</a>
 		</div>
 	</footer>
